@@ -1,0 +1,57 @@
+#
+# Description
+# -----------
+#
+# Fields
+# ------
+# id:                       The ID assigned to the record.
+# uuid:                     The Universal Unique ID.
+# tnid:                     The Tenant ID the record belongs to.
+#
+# qso_dt:                   The UTC date and time of the contact.
+# callsign:                 The remote callsign
+#
+# recv_rst:                 The received RS(t) report
+# recv_state_country:       The received state or Country.
+# sent_rst:                 The sent RS(t) report
+#
+# band:                     The band contact was made.
+# mode:                     The mode of the contact.
+# frequency:                The frequency the qso was made on.
+# operator:                 The optional operator field if multiple operators.
+#
+# flags:                    The options for the qso.
+#
+#                               0x01 - 
+#                               0x02 -
+#                               0x04 -
+#                               0x08 -
+#
+# notes:                    The notes for the qso.
+#
+# date_added:               The UTC date and time the record was added.
+# last_updated:             The UTC date and time the record was last update.
+#
+create table qruqsp_13colonieslog_qsos (
+    id int not null auto_increment,
+    uuid char(36) not null,
+    tnid int not null,
+
+    qso_dt datetime not null,
+    callsign varchar(20) not null,
+    recv_rst varchar(10) not null,
+    recv_state_country varchar(10) not null,
+    sent_rst varchar(10) not null,
+    band varchar(10) not null,
+    mode varchar(10) not null,
+    frequency varchar(20) not null,
+    operator varchar(50) not null,
+    flags tinyint unsigned not null,
+    notes varchar(5000) not null,
+
+    date_added datetime not null,
+    last_updated datetime not null,
+    primary key (id),
+    unique index (uuid),
+    index sync (tnid, uuid, last_updated)
+) ENGINE='InnoDB', COMMENT='v1.01';
