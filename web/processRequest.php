@@ -252,8 +252,8 @@ function qruqsp_13colonieslog_web_processRequest(&$ciniki, $settings, $tnid, $ar
             'columns' => array( 
                 array('label' => 'Date/Time', 'class' => 'alignleft', 'field' => 'qso_dt_display'),
                 array('label' => 'Call Sign', 'class' => 'alignleft', 'field' => 'callsign'),
-                array('label' => 'Class', 'class' => 'aligncenter', 'field' => 'class'),
-                array('label' => 'Section', 'class' => 'aligncenter', 'field' => 'section'),
+                array('label' => 'Recv RST', 'class' => 'aligncenter', 'field' => 'class'),
+                array('label' => 'Recv State/Country', 'class' => 'aligncenter', 'field' => 'section'),
                 array('label' => 'Band', 'class' => 'aligncenter', 'field' => 'band'),
                 array('label' => 'Mode', 'class' => 'aligncenter', 'field' => 'mode'),
                 array('label' => 'Frequency', 'class' => 'alignright', 'field' => 'frequency'),

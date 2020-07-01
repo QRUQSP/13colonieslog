@@ -53,7 +53,7 @@ function qruqsp_13colonieslog_qsoUpdate(&$ciniki) {
     if( isset($args['recv_state_country']) ) {
         $args['recv_state_country'] = trim(strtoupper($args['recv_state_country']));
     }
-    if( isset($args['mode']) && !in_array($args['mode'], array('CW', 'PH')) ) {
+    if( isset($args['mode']) && !in_array($args['mode'], array('CW', 'PH', 'DIG')) ) {
         return array('stat'=>'warn', 'err'=>array('code'=>'qruqsp.13colonieslog.28', 'msg'=>'Please choose a mode'));
     }
 

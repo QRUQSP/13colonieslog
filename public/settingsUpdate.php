@@ -88,7 +88,7 @@ function qruqsp_13colonieslog_settingsUpdate(&$ciniki) {
         if( isset($ciniki['request']['args'][$field]) 
             && (!isset($settings[$field]) || $ciniki['request']['args'][$field] != $settings[$field]) 
             ) {
-            if( in_array($field, ['callsign', 'class', 'section']) ) {
+            if( in_array($field, ['callsign', 'state']) ) {
                 $ciniki['request']['args'][$field] = strtoupper($ciniki['request']['args'][$field]);
             }
             $strsql = "INSERT INTO qruqsp_13colonieslog_settings (tnid, detail_key, detail_value, date_added, last_updated) "

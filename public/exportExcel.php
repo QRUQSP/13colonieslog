@@ -58,8 +58,9 @@ function qruqsp_13colonieslog_exportExcel($ciniki) {
         . "qruqsp_13colonieslog_qsos.qso_dt, "
         . "DATE_FORMAT(qruqsp_13colonieslog_qsos.qso_dt, '%Y-%m-%d %H%i') AS qso_dt_display, "
         . "qruqsp_13colonieslog_qsos.callsign, "
-        . "qruqsp_13colonieslog_qsos.class, "
-        . "qruqsp_13colonieslog_qsos.section, "
+        . "qruqsp_13colonieslog_qsos.recv_rst, "
+        . "qruqsp_13colonieslog_qsos.recv_state_country, "
+        . "qruqsp_13colonieslog_qsos.sent_rst, "
         . "qruqsp_13colonieslog_qsos.band, "
         . "qruqsp_13colonieslog_qsos.mode, "
         . "qruqsp_13colonieslog_qsos.frequency, "
@@ -74,7 +75,7 @@ function qruqsp_13colonieslog_exportExcel($ciniki) {
     ciniki_core_loadMethod($ciniki, 'ciniki', 'core', 'private', 'dbHashQueryArrayTree');
     $rc = ciniki_core_dbHashQueryArrayTree($ciniki, $strsql, 'qruqsp.13colonieslog', array(
         array('container'=>'qsos', 'fname'=>'id', 
-            'fields'=>array('id', 'qso_dt', 'qso_dt_display', 'callsign', 'class', 'section', 'band', 'mode', 'frequency', 
+            'fields'=>array('id', 'qso_dt', 'qso_dt_display', 'callsign', 'recv_rst', 'recv_state_country', 'sent_rst', 'band', 'mode', 'frequency', 
                 'gota', 'operator', 'notes'),
             ),
         ));
