@@ -195,7 +195,7 @@ function qruqsp_13colonieslog_get($ciniki) {
         } else {
             $modes[$qso['mode']]++;
         }
-        if( isset($rsp['mode_band_stats'][$qso['mode']][$qso['band']]) ) {
+/*        if( isset($rsp['mode_band_stats'][$qso['mode']][$qso['band']]) ) {
             $rsp['mode_band_stats'][$qso['mode']][$qso['band']]['num_qsos']++;
             $rsp['mode_band_stats'][$qso['mode']]['totals']['num_qsos']++;
             $rsp['mode_band_stats']['totals'][$qso['band']]['num_qsos']++;
@@ -204,7 +204,7 @@ function qruqsp_13colonieslog_get($ciniki) {
             // Should never happen, checked when entered
             error_log('unknown mode: ' . $qso['mode'] . ' band: ' . $qso['band']);
             error_log(print_r($qso,true));
-        }
+        } */
 /*        if( isset($rsp['section_band_stats'][$qso['section']][$qso['band']]) ) {
             $rsp['section_band_stats'][$qso['section']][$qso['band']]['num_qsos']++;
             $rsp['section_band_stats'][$qso['section']]['totals']['num_qsos']++;
